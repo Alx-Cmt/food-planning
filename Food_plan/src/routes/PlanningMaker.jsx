@@ -28,7 +28,7 @@ const PlanningMaker = () => {
         const start = format(startOfMonth(currentMonth), 'yyyy-MM-dd')
         const end = format(endOfMonth(currentMonth), 'yyyy-MM-dd')
         //Recuperation de toutes les entries du mois
-        fetch(`http://localhost:1337/api/calendars?populate=*&filters[date][$gte]=${start}&filters[date][$lte]=${end}`)
+        fetch(`${import.meta.env.VITE_API_URL}/api/calendars?populate=*&filters[date][$gte]=${start}&filters[date][$lte]=${end}`)
         //populate=* : Inclus toutes les relations (le meal lié a chaque entrée)
         //filters[date][$gte]=${start} : Juste les entre dont la date est superieure ou egale au current month
         .then(res => res.json())
@@ -51,7 +51,7 @@ const PlanningMaker = () => {
 
     const removeFromCalendar = async (meal, date, documentId) => {
         console.log('documentId reçu:', documentId)
-        await fetch(`http://localhost:1337/api/calendars/${documentId}`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/api/calendars/${documentId}`, {
             method: 'DELETE'
         })
         setEntries(prev => prev.filter(e => e.date !== date))
@@ -86,7 +86,7 @@ const PlanningMaker = () => {
         //try = si quelque chose est coupe dans le reseau on attrape l'erreur au lieu de tout faire planter
             dispatch(remove(meal.documentId))
             // Envoie de la date et du meal dans le calendar
-            const response = await fetch('http://localhost:1337/api/calendars', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/calendars`, {
             //Lien vers l'envoi
                 method: 'POST',
                 //Methode d'envoie

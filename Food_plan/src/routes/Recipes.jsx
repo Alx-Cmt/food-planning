@@ -16,7 +16,7 @@ const Recipes = () => {
   const dispatch = useDispatch()
 
   const getRecipes = async () => {
-    const json = await fetch("http://localhost:1337/api/meals?populate=ingredients").then(response => response.json())
+    const json = await fetch(`${import.meta.env.VITE_API_URL}/api/meals?populate=ingredients`).then(response => response.json())
     setRecipes(json.data)
   }
   useEffect(() => {

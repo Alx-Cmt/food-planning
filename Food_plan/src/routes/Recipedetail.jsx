@@ -10,7 +10,7 @@ const Recipedetail = () => {
     
     //Mise en place de l'appel API
     const getRecipe = async () => {
-        const json = await fetch(`http://localhost:1337/api/meals/${documentId}?populate=ingredients`).then(response => response.json())
+        const json = await fetch(`${import.meta.env.VITE_API_URL}/api/meals/${documentId}?populate=ingredients`).then(response => response.json())
         setRecipe(json.data)
     }
     //Lancement de l'appel API

@@ -25,7 +25,7 @@ const Home = () => {
     const end = format(endOfMonth(currentMonth), 'yyyy-MM-dd');
     //On calcul le debut et la fin du mois pour les utiliser dans l'URL lors de l'appel API
 
-    fetch(`http://localhost:1337/api/calendars?populate=meal&filters[date][$gte]=${start}&filters[date][$lte]=${end}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/calendars?populate=meal&filters[date][$gte]=${start}&filters[date][$lte]=${end}`)
       .then(res => res.json())
       .then(data => setEntries(data.data));
   }, [currentMonth]);

@@ -21,7 +21,7 @@ const Grocery = () => {
         const start = format(startOfMonth(currentMonth), 'yyyy-MM-dd')
         const end = format(endOfMonth(currentMonth), 'yyyy-MM-dd')
 
-        const json = await fetch(`http://localhost:1337/api/calendars?populate[meal][populate]=ingredients&filters[date][$gte]=${start}&filters[date][$lte]=${end}`).then(response => response.json())
+        const json = await fetch(`${import.meta.env.VITE_API_URL}/api/calendars?populate[meal][populate]=ingredients&filters[date][$gte]=${start}&filters[date][$lte]=${end}`).then(response => response.json())
         setMonthlyMeals(json.data)
     }
     useEffect(() => {

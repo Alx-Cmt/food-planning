@@ -80,7 +80,7 @@ const AddRecipe = () => {
             return
         }
 
-        await fetch("http://localhost:1337/api/meals", {
+        await fetch(`${import.meta.env.VITE_API_URL}/api/meals`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

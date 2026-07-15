@@ -1,0 +1,102 @@
+.droppableday{
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.050);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+    min-height: 7rem;
+    padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;         
+    flex-direction: column; 
+    &:hover{
+        transform: translateY(-0.2rem);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.137);
+    }
+}
+.day{
+    color: #f5eadc;
+    font-family: 'league_gothicregular';
+    font-size: 1.8rem;
+}
+.daynumber{
+    color: #f5eadc;
+    font-family: 'league_gothicregular';
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 0.2rem;
+}
+.mealname{
+    font-family: 'league_gothicregular';
+    color: #f19926;
+    font-size: 1.5rem;
+}
+.test{
+    height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.calendarbtn{
+    display: flex;
+    justify-content: center;
+    padding: 0rem 0rem 2rem 0rem;
+    h2{
+        font-family: 'league_gothicregular';
+        font-size: 3rem;
+        color: #f5eadc;
+        text-transform: uppercase;
+        margin: 0rem;
+    }
+}
+.iconarrow{
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem 0rem 1rem;
+    font-size: 2rem;
+    i{
+        transition: all 0.3s ease;
+    }
+    & i:hover{
+        color: #f5eadc;
+    }
+}
+a{
+    text-decoration: none;
+}
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.btn{
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    color: #f19926;
+    font-size: 1rem;
+    border: none;
+    i{
+        font-size: clamp(1rem, 2vh, 3rem);
+        transition: all 0.5s ease;
+        background-color: #ece9e6;
+        border-radius: 50px;
+        padding: 0.3rem 0.5rem;
+    }
+    & i:hover{
+        background-color: #f19926;
+        color: #f5eadc;
+    }
+}
+
+.isover {
+    background: rgba(255, 233, 172, 0.616);
+}

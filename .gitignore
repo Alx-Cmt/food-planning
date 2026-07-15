@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.DS_Store
+food-plan/node_modules/
+meal-planner-api/node_modules/
+meal-planner-api/.env

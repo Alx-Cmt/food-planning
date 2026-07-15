@@ -1,0 +1,188 @@
+
+
+.check{
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+}
+
+.check,.noncheck{
+  text-align: start;
+  font-family: 'league_gothicregular';
+  color: #3A5635;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body{
+  background-image:url('../assets/bg2.png');
+  background-size:cover;
+  background-position: center;
+}
+#root{
+  margin: 0;
+  border-inline: 0px;
+  margin: 0rem 3rem;
+  width: auto;
+}
+
+.iconarrow{
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem 0rem 1rem;
+    font-size: 2rem;
+    i{
+        transition: all 0.3s ease;
+    }
+    & i:hover{
+        color: #f5eadc;
+    }
+}
+.calendarbtn{
+  display: flex;
+  h2{
+    font-family: 'league_gothicregular';
+  }
+}
+
+.items-inner{
+  width: 60%;
+  background-color: rgba(240, 233, 204, 0.932);
+  padding: 2rem;
+  border-radius: 15px;
+}
+.items{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+
+}
+
+form{
+  display: flex;
+  justify-content: center;
+}
+.fullfield{
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.050);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  input, textarea, select{
+    width: 100%;
+    height: 2rem;
+    background-color: rgba(240, 233, 204, 0.932);
+    color:#3A5635;
+    font-family: 'league_gothicregular';
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 0.3rem;
+  }
+  textarea{
+    height: 7rem;
+  }
+  select{
+    height: 2.8rem;
+  }
+}
+.labelform{
+  font-family: 'league_gothicregular';
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #c9710d;
+}
+.fieldwidth, .field, .fielddifficulty{
+  padding: 0.5rem;
+}
+button{
+  border: none;
+  background-color: transparent;
+  margin: 0.4rem 0rem;
+  i{
+    transition: all 0.3s ease;
+    color: #c9710d;
+    background-color: #f5eadc;
+    border-radius: 50px;
+    padding: 0.3rem 0.4rem;
+    font-size: 1.5rem;
+  }
+  & i:hover{
+    color: #f5eadc;
+    background-color:#c9710d;
+  }
+}
+.btnadd{
+  background-color: #f5eadc;
+  color:#3A5635;
+  transition: all 0.3s ease;
+  border: none;
+  &:hover{
+    background-color:  #f5eadc;
+    color: #c9710d;
+  }
+}
+
+.title-list{
+  font-family: 'league_gothicregular';
+  font-size: 2.5rem;
+  
+}
+.listingredients-inner{
+ width: 15rem;
+}
+.listingredients{
+  display: flex;
+  justify-content: center;
+}
+.list{
+  background: #f5eadc;
+  border-radius: 10px;
+  padding: 1rem 0rem;
+  color:#3A5635;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  h3{
+    margin: 0;
+  }
+}
+.desc{
+  text-align: start;
+  font-family: 'league_gothicregular';
+  font-size: 2rem;
+  color: #f5eadc;
+}
+.ingredient{
+  font-size: 1.5rem;
+  font-family: 'league_gothicregular';
+  
+}
+.recipe{
+  font-family: 'league_gothicregular';
+  font-size: 1.5rem;
+  margin: 2rem 0rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.3);
+  padding: 2rem 1rem;
+  color: #f5eadc;
+
+}
+@media(max-width: 575px){
+  .items-inner{
+    width: 100%;
+  }
+  .fullfield{
+    width: 95%;
+  }
+}
+

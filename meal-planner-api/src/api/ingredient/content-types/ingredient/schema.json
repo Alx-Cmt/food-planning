@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ingredients",
+  "info": {
+    "singularName": "ingredient",
+    "pluralName": "ingredients",
+    "displayName": "Ingredient"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "meals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meal.meal",
+      "inversedBy": "ingredients"
+    },
+    "AlwaysInStock": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

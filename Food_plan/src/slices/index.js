@@ -17,7 +17,13 @@ const dataSlice = createSlice ({
         },
 
         remove: (state, {payload}) => {
-            state.command.splice(payload, 1)
+            const index = state.command.findIndex(
+                meal => meal.id === payload
+            )
+
+            if (index !== -1) {
+                state.command.splice(index, 1)
+            }
         }
     }
 })

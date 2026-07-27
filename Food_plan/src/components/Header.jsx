@@ -53,14 +53,13 @@ const Header = ({ recipe }) => {
                 </Col>
                 <Col className={styles.icons}>
                     {navigation.map((item) => {
-
-                        if (location.pathname === item.path) {
-                            return null
-                        }
-
                         return (
                             <Link key={item.path} to={item.path}>
-                                {item.icon}
+                                {React.cloneElement(item.icon, {
+                                    className: `${item.icon.props.className} ${
+                                        location.pathname === item.path ? styles.active : ""
+                                    }`
+                                })}
                             </Link>
                         )
                     })}

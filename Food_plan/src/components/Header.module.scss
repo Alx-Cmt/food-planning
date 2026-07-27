@@ -20,16 +20,23 @@ header{
     box-shadow: 0 0 19px 0px rgba(0, 0, 0, 0.3);
     padding: 3rem 0rem;
 }
-.icons{
+.icons {
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: clamp(0.5rem, 7vw, 2rem);
-    i{
+
+    i {
+        color: #f19926;
         transition: all 0.3s ease;
-    }
-    & i:hover{
-        color: #f5eadc;
+
+        &.active {
+            color: white;
+        }
+
+        &:hover {
+            color: #f5eadc;
+        }
     }
 }
 .innerheader{
@@ -56,3 +63,4 @@ i{
         padding:2rem 1rem; 
     }    
 }
+

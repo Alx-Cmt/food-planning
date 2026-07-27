@@ -45,8 +45,8 @@ const PlanningMaker = () => {
     const prevMonth = () => setCurrentMonth(m => new Date(m.getFullYear(), m.getMonth() - 1, 1))
 
     //Appel au slice pour supprimer un meal
-    const deleteMeal = (index) => {
-        dispatch(remove(index))
+    const deleteMeal = (id) => {
+        dispatch(remove(id))
     }
 
     const removeFromCalendar = async (meal, date, documentId) => {
@@ -84,7 +84,7 @@ const PlanningMaker = () => {
         
         try {
         //try = si quelque chose est coupe dans le reseau on attrape l'erreur au lieu de tout faire planter
-            dispatch(remove(meal.documentId))
+            dispatch(remove(meal.id))
             // Envoie de la date et du meal dans le calendar
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/calendars`, {
             //Lien vers l'envoi
@@ -118,17 +118,17 @@ const PlanningMaker = () => {
 
     const listfoodpool = foodpool.map((meal, index) => {
         return (
-            <Recipe
-                key={meal.id}
-                id={meal.id}
-                documentId={meal.documentId}
-                Name={meal.Name}
-                Difficulty={meal.Difficulty}
-                inTheCart={meal.inTheCart}
-                meal={meal}
-                editable={true}
-                action={() => deleteMeal(index)}
-            />
+        <Recipe
+            key={meal.id}
+            id={meal.id}
+            documentId={meal.documentId}
+            Name={meal.Name}
+            Difficulty={meal.Difficulty}
+            inTheCart={meal.inTheCart}
+            meal={meal}
+            editable={true}
+            action={() => deleteMeal(meal.id)}
+        />
         )
     })
   return (

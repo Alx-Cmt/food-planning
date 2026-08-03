@@ -20,7 +20,7 @@ const AddRecipe = () => {
 
     //Ce bloc fait un appel API pour recuper tout les ingredients dispo et les mettre dans le states ingredients
     const getIngredients = async () => {
-            const json = await fetch(`${import.meta.env.VITE_API_URL}/api/ingredients?pagination[limit]=-1`).then(response => response.json())
+            const json = await fetch(`${import.meta.env.VITE_API_URL}/api/ingredients?pagination[limit]=500`).then(response => response.json())
             setIngredients(json.data)
     }
     useEffect(() => {

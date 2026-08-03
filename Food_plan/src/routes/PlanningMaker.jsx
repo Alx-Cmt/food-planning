@@ -14,6 +14,7 @@ import styles2 from "../components/Recipe.module.scss"
 
 const PlanningMaker = () => {
     //Recuperation de state global avec useSelector
+    //Va dans le reducer data et recupere le state command
     const foodpool = useSelector(state => state.data.command)
     //Initialisation de dispatch pour modifier la state globale
     const dispatch = useDispatch()
